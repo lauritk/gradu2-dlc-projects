@@ -1,0 +1,91 @@
+# Project definitions (do not edit)
+Task: of-rodent-tracking-959-18-single-pass
+scorer: LK
+date: May3
+
+# Project path (change when moving around)
+project_path: /home/pop/GitHub/Gradu-2-0-deeplabconfig/959-18-training
+
+# Annotation data set configuration (and individual video cropping parameters)
+video_sets:
+  /preEpisodicMemoryRoom4_1/2019-03-15 14-05-01.flv:
+    crop: 0, 604, 0, 340
+  /preObjectPlaceRoom4_2/2019-03-13 14-54-53.mp4:
+    crop: 0, 1280, 0, 720
+  /preObjectPlaceRoom4_2/2019-03-13 15-03-01.mp4:
+    crop: 0, 1280, 0, 720
+  /preObjectPlaceRoom4_2/2019-03-13 15-13-28.mp4:
+    crop: 0, 1280, 0, 720
+  /preObjectPlaceRoom4_2/2019-03-13 15-26-49.mp4:
+    crop: 0, 1280, 0, 720
+  /preObjectPlaceRoom4_2/2019-03-13 15-20-38.mp4:
+    crop: 0, 1280, 0, 720
+  /preObjectPlaceRoom4_2/2019-03-13 15-33-18.mp4:
+    crop: 0, 1280, 0, 720
+  /preObjectPlaceRoom4_2/2019-03-13 15-40-22.mp4:
+    crop: 0, 1280, 0, 720
+  /preObjectPlaceRoom4_2/2019-03-13 17-05-35.mp4:
+    crop: 0, 1280, 0, 720
+  /preWherePlaceRoom4_1/2019-03-14 13-54-44.flv:
+    crop: 0, 1920, 0, 1080
+  /post_Wherememory_Room4_2/2019-05-15 13-02-29.flv:
+    crop: 0, 1280, 0, 720
+  /post_WhereMemory_Room4_1/2019-05-15 14-15-16.flv:
+    crop: 0, 960, 0, 540
+  /TIM18SDM018_ACAC_1_alkuosa.avi:
+    crop: 0, 1192, 0, 1010
+  /COD_exposure1B_rats5to8_RAT5.mp4:
+    crop: 0, 640, 0, 480
+  /PreIrrPlaceTest_rats17-20_RAT17.m4v:
+    crop: 0, 640, 0, 360
+  /Rat35_COD4_testA_cut.mp4:
+    crop: 0, 720, 0, 400
+  /Rat25_27_COD4_A_test_RAT25.wmv:
+    crop: 0, 640, 0, 360
+  /COD_exposure_1A_rats17and19_RAT17.mp4:
+    crop: 0, 1280, 0, 720
+bodyparts:
+- body_center
+- body_left
+- body_right
+- eye_left
+- eye_right
+- neck_center
+- snout
+- tail_stem
+- tail_tip
+start: 0
+stop: 1
+numframes2pick: 20
+
+# Plotting configuration
+skeleton:
+skeleton_color: black
+pcutoff: 0.6
+dotsize: 2
+alphavalue: 0.7
+colormap: jet
+
+# Training,Evaluation and Analysis configuration
+TrainingFraction:
+- 0.95
+iteration: 0
+resnet:
+snapshotindex: -1
+batch_size: 8
+
+# Cropping Parameters (for analysis and outlier frame detection)
+cropping: false
+#if cropping is true for analysis, then set the values here:
+x1: 0
+x2: 640
+y1: 277
+y2: 624
+
+# Refinement configuration (parameters from annotation dataset configuration also relevant in this stage)
+corner2move2:
+- 50
+- 50
+move2corner: true
+default_net_type: resnet_50
+default_augmenter: default

@@ -1,0 +1,61 @@
+# Project definitions (do not edit)
+Task: of-rodent-tracking-256-3-validation
+scorer: LK
+date: May3
+
+# Project path (change when moving around)
+project_path: /home/pop/GitHub/Gradu-2-0-deeplabconfig/256-3-validation
+
+# Annotation data set configuration (and individual video cropping parameters)
+video_sets:
+  /post_Wherememory_Room4_2/2019-05-15 14-45-58.flv:
+    crop: 0, 960, 0, 540
+  /TIM18SDM018_SEREX_2_alkuosa.avi:
+    crop: 0, 1192, 0, 1010
+  /Rat36_34_COD1-test_A_RAT34.mp4:
+    crop: 0, 1280, 0, 720
+bodyparts:
+- body_center
+- body_left
+- body_right
+- eye_left
+- eye_right
+- neck_center
+- snout
+- tail_stem
+- tail_tip
+start: 0
+stop: 1
+numframes2pick: 20
+
+# Plotting configuration
+skeleton:
+skeleton_color: black
+pcutoff: 0.6
+dotsize: 2
+alphavalue: 0.7
+colormap: jet
+
+# Training,Evaluation and Analysis configuration
+TrainingFraction:
+- 0.95
+iteration: 0
+resnet:
+snapshotindex: -1
+batch_size: 8
+
+# Cropping Parameters (for analysis and outlier frame detection)
+cropping: false
+#if cropping is true for analysis, then set the values here:
+x1: 0
+x2: 640
+y1: 277
+y2: 624
+
+# Refinement configuration (parameters from annotation dataset configuration also relevant in this stage)
+corner2move2:
+- 50
+- 50
+move2corner: true
+default_net_type: resnet_50
+default_augmenter: default
