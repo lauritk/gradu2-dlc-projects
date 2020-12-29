@@ -51,7 +51,7 @@ multi_step:
 net_type: resnet_50
 num_joints: 9
 pos_dist_thresh: 17
-project_path: /home/pop/GitHub/OF_DeepLabCut/of-rodent-tracking-959-18-single-pass-LK-2020-05-03
+project_path: /home/pop/GitHub/Gradu-2-0-deeplabconfig/959-18-training
 rightwidth: 400
 save_iters: 10000
 scale_jitter_lo: 0.5
